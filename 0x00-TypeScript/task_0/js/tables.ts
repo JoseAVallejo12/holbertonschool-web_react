@@ -1,26 +1,15 @@
-export const drawTables = (data) => {
-  const body = document.querySelector('body');
-  const tables = [];
-  addStyle();
-
-  if (data instanceof Array) {
-    data.forEach((item, index) => {
-      tables.push(createTable('table', item));
-    })
-  }
-  tables.forEach(table => body.appendChild(table));
-}
-
-function createTable(tableName, data) {
-  const table = document.createElement(tableName);
+export function createTable(data: Object): HTMLTableElement {
+  const table = document.createElement('table');
   const thead = document.createElement('thead');
   const tbody = document.createElement('tbody');
-  const headerNames = Object.keys(data);
+  const keysValues = Object.entries(data);
 
-  const ths = headerNames.map(name => `<th scope="col">${name}</th>`).join('');
+  const ths = keysValues
+    .map((item) => `<th scope="col">${capitalize(item[0])}</th>`)
+    .join('');
   thead.innerHTML = ths;
 
-  const tds = headerNames.map(key => `<td>${data[key]}</td>`).join('');
+  const tds = keysValues.map((item) => `<td>${item[1]}</td>`).join('');
   tbody.innerHTML = tds;
 
   table.appendChild(thead);
@@ -29,7 +18,11 @@ function createTable(tableName, data) {
   return table;
 }
 
-function addStyle() {
+function capitalize(header: string): string {
+  return header.charAt(0).toUpperCase() + header.slice(1);
+}
+
+export function addStyles() {
   const css = `
     body {
       display: flex;

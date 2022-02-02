@@ -1,5 +1,4 @@
-import { drawTables } from './index';
-
+import { createTable, addStyles } from './tables';
 interface Student {
   firstName: string;
   lastName: string;
@@ -19,6 +18,14 @@ const student2: Student = {
   location: 'Paris',
 };
 
-const studentsList: Student[] = [student1, student2];
+const studentsList = [student1, student2];
 
+function drawTables(students: Student[]) {
+  const body: HTMLBodyElement = document.querySelector('body');
+  students.forEach((student) => {
+    body.appendChild(createTable(student));
+  });
+}
+
+addStyles();
 drawTables(studentsList);
