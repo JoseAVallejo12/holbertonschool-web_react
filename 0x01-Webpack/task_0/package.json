@@ -1,0 +1,19 @@
+{
+  "name": "Holberton webpack",
+  "version": "1.0.0",
+  "description": "Holberton webpack",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --mode development --watch"
+  },
+  "keywords": [],
+  "author": "Jose A Vallejo",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.6.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2"
+  }
+}
