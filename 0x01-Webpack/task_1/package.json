@@ -4,6 +4,7 @@
   "description": "webpack file config",
   "main": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
   },
   "author": "JoseAVallejo12",
