@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import * as _ from 'lodash';
+import _ from 'lodash';
 
 
 $.when($.ready).then(function () {
