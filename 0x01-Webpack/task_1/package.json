@@ -1,13 +1,12 @@
 {
   "name": "task_1",
   "version": "1.0.0",
-  "description": "",
+  "description": "webpack file config",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production --config ./webpack.config.js"
   },
-  "keywords": [],
-  "author": "",
+  "author": "JoseAVallejo12",
   "license": "ISC",
   "devDependencies": {
     "webpack": "^5.68.0",
