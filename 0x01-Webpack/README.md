@@ -1,2 +1,1 @@
-# holbertonschool-web_react
- last stage holberton advance program
+# 0x01. Webpack

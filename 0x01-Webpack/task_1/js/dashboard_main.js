@@ -4,18 +4,20 @@ import _ from 'lodash';
 let count = 0;
 
 function updateCounter() {
-  return count++;
+	count += 1;
+	return count;
 }
 
-$(function () {
+$(function() {
+	$('body').append('<p>Holberton Dashboard</p>');
+	$('body').append('<p>Dashboard data for the students</p>');
+	$('body').append('<button>Click here to get started</button>');
+	$('body').append("<p id='count'></p>");
+	$('body').append('<p>Copyright - Holberton School</p>');
 
-  $('body').append('<p>Holberton Dashboard</p>');
-  $('body').append('<p>Dashboard data for the students</p>');
-  $('body').append('<button type="button">Click here to get started</button>');
-  $('body').append('<p id="count"></p>');
-  $('body').append('<p>Copyright - Holberton School</p>');
-
-  $('button').on('click', _.debounce(() => {
-    $('#count').text(`${updateCounter()} clicks on the button`);
-  }));
+	let debouncedFunc = _.debounce(() => {
+		let count = updateCounter();
+		$('#count').text(`${count} clicks on the button`);
+	});
+	$('button').on('click', debouncedFunc);
 });

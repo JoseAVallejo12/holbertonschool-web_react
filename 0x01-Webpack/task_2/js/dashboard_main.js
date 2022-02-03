@@ -1,21 +1,25 @@
-import $ from 'jquery';
-import * as _ from 'lodash';
 import '../css/main.css';
+import $ from 'jquery';
+import _ from 'lodash';
 
-$.when($.ready).then(function () {
-  let count = 0;
+let count = 0;
 
-  $('body').append(`
-    <p>Holberton Dashboard</p>
-    <p>Dashboard data for the students</p>
-    <buttom type="button">Click here to get started</buttom>
-    <p id='count'></p>
-    <p>Copyright - Holberton School</p>
-  `);
+function updateCounter() {
+	count += 1;
+	return count;
+}
 
-  $('buttom').on('click', _.debounce(updateCounter, 300));
+$(function() {
+	$('body').append("<div id='logo'></div>");
+	$('body').append('<p>Holberton Dashboard</p>');
+	$('body').append('<p>Dashboard data for the students</p>');
+	$('body').append('<button><span>Click here to get started<span></button>');
+	$('body').append("<p id='count'></p>");
+	$('body').append('<p>Copyright - Holberton School</p>');
 
-  function updateCounter() {
-    $('#count').text(`${count++} clicks on the button`);
-  }
+	let debouncedFunc = _.debounce(() => {
+		let count = updateCounter();
+		$('#count').text(`${count} clicks on the button`);
+	});
+	$('button').on('click', debouncedFunc);
 });
