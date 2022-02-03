@@ -4,7 +4,7 @@
   "description": "webpack file config",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode production --config ./webpack.config.js"
+    "build": "webpack"
   },
   "author": "JoseAVallejo12",
   "license": "ISC",
