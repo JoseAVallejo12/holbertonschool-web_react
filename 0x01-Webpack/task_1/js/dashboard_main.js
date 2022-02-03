@@ -7,12 +7,12 @@ $.when($.ready).then(function () {
 
   $('body').append('<p>Holberton Dashboard</p>');
   $('body').append('<p>Dashboard data for the students</p>');
-  $('body').append('<buttom type="button">Click here to get started</buttom>')
-    .on('click', _.debounce(updateCounter, 300));
+  $('body').append('<buttom type="button">Click here to get started</buttom>');
   $('body').append('<p id="count"></p>');
   $('body').append('<p>Copyright - Holberton School</p>');
 
-  function updateCounter() {
+  let debouncedFunc = _.debounce(() => {
     $('#count').text(`${count++} clicks on the button`);
-  }
+  });
+  $('button').on('click', debouncedFunc);
 });
