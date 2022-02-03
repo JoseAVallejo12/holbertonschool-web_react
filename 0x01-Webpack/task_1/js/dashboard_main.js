@@ -7,7 +7,7 @@ function updateCounter() {
   return count++;
 }
 
-$.when($.ready).then(function () {
+$(function () {
 
   $('body').append('<p>Holberton Dashboard</p>');
   $('body').append('<p>Dashboard data for the students</p>');
@@ -15,9 +15,7 @@ $.when($.ready).then(function () {
   $('body').append('<p id="count"></p>');
   $('body').append('<p>Copyright - Holberton School</p>');
 
-  const debouncedFunc = _.debounce(() => {
-    let count = updateCounter();
-    $('#count').text(`${count} clicks on the button`);
-  });
-  $('button').on('click', debouncedFunc);
+  $('button').on('click', _.debounce(() => {
+    $('#count').text(`${updateCounter()} clicks on the button`);
+  }));
 });
