@@ -1,14 +1,13 @@
 {
-  "name": "Holberton webpack",
+  "name": "task_0",
   "version": "1.0.0",
-  "description": "Holberton webpack",
+  "description": "webpack basic setup",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --mode development --watch"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "Jose A Vallejo",
-  "license": "MIT",
+  "author": "JoseAVallejo12",
+  "license": "ISC",
   "dependencies": {
     "jquery": "^3.6.0"
   },
