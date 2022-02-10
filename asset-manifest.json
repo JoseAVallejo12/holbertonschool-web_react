@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/http//:JoseAVallejo12.github.io/web-holberton-test/static/css/main.11279e8a.css",
+    "main.js": "/http//:JoseAVallejo12.github.io/web-holberton-test/static/js/main.c1adf216.js",
+    "static/js/787.545aecf5.chunk.js": "/http//:JoseAVallejo12.github.io/web-holberton-test/static/js/787.545aecf5.chunk.js",
+    "static/media/holberton-logo.jpg": "/http//:JoseAVallejo12.github.io/web-holberton-test/static/media/holberton-logo.217d1e0abc753d28600d.jpg",
+    "index.html": "/http//:JoseAVallejo12.github.io/web-holberton-test/index.html",
+    "main.11279e8a.css.map": "/http//:JoseAVallejo12.github.io/web-holberton-test/static/css/main.11279e8a.css.map",
+    "main.c1adf216.js.map": "/http//:JoseAVallejo12.github.io/web-holberton-test/static/js/main.c1adf216.js.map",
+    "787.545aecf5.chunk.js.map": "/http//:JoseAVallejo12.github.io/web-holberton-test/static/js/787.545aecf5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.11279e8a.css",
+    "static/js/main.c1adf216.js"
+  ]
+}
