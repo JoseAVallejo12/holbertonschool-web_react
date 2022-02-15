@@ -24,6 +24,7 @@
     "enzyme-adapter-react-16": "^1.15.6",
     "html-webpack-plugin": "^5.5.0",
     "jest": "^27.5.1",
+    "jest-transform-stub": "^2.0.0",
     "postcss": "^8.4.6",
     "postcss-loader": "^6.2.1",
     "style-loader": "^3.3.1",
@@ -32,6 +33,7 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
+    "prop-types": "^15.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
