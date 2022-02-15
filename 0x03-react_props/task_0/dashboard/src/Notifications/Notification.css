@@ -5,7 +5,7 @@
 }
 
 .Notifications button img {
-  width: 10px;
+  width: 20px;
 }
 
 .Notifications p {
@@ -13,10 +13,10 @@
   margin-top: 15px;
 }
 
-[data-priority="default"] {
+[data-priority='default'] {
   color: blue;
 }
 
-[data-priority="urgent"] {
+[data-priority='urgent'] {
   color: red;
 }

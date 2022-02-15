@@ -4,7 +4,7 @@
   "description": "My webpack project",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --watch",
     "build": "webpack --mode=production --config configs/webpack.config.js",
     "start": "webpack serve --mode=development --config configs/webpack.config.js"
   },

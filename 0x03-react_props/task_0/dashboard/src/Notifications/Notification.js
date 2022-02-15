@@ -3,7 +3,7 @@ import "./Notification.css";
 import { getLatestNotification } from "../utils/utils";
 import closeIcon from "../assets/close_icon.png";
 
-const Notifications = () => {
+export default function Notifications() {
   return (
     <div className="Notifications">
       <button
@@ -29,5 +29,3 @@ const Notifications = () => {
     </div>
   );
 };
-
-export default Notifications;
