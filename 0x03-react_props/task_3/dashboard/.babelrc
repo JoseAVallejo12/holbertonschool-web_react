@@ -1,0 +1,7 @@
+{
+  "plugins": ["@babel/syntax-dynamic-import"],
+  "presets": [
+    ["@babel/preset-env", {"targets": {"node": "current"}}], // esta configuración es para que funcione jest con ES6
+    ["@babel/preset-react"] // esta configuración es para que funcione jest con React
+  ]
+}
