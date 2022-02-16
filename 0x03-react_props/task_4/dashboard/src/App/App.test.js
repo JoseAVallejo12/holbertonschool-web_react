@@ -21,6 +21,13 @@ describe("<App />", () => {
   it('should behave one Login component', () => {
     const wrapper = shallow(<App />);
     expect(wrapper.find('Login').length).toEqual(1);
+    expect(wrapper.find('CourseList').length).toEqual(0);
+  });
+
+  it('should behave one CourseList component', () => {
+    const wrapper = shallow(<App isLoggedIn />);
+    expect(wrapper.find('CourseList').length).toEqual(1);
+    expect(wrapper.find('Login').length).toEqual(0);
   });
 
   it('should behave one Footer component', () => {

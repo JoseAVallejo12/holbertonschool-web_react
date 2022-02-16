@@ -1,7 +1,9 @@
 .Notifications {
+  position: relative;
   border: 3px dashed #e01d3f;
   padding: 10px;
   margin-bottom: 20px;
+  width: 450px;
 }
 
 .Notifications button img {
@@ -19,4 +21,13 @@
 
 [data-priority='urgent'] {
   color: red;
+}
+
+.menuItem {
+  position: absolute;
+  top: 0;
+  right: 15px;
+}
+.menuItem p {
+  text-align: end;
 }
