@@ -19,7 +19,7 @@ NotificationItem.prototype = {
     __html: PropTypes.string,
   }),
   value: PropTypes.string,
-  key: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
 }
 NotificationItem.defaultProps = {
   type: 'default',

@@ -3,6 +3,17 @@ import { shallow } from "enzyme";
 import React from "react";
 import App from "./App";
 
+
+const lista = [{
+  id: 1,
+  name: 'ES6',
+  credit: 60,
+}, {
+  id: 2,
+  name: 'Webpack',
+  credit: 20,
+}];
+
 describe("<App />", () => {
   it("App renders without crashing", () => {
     const wrapper = shallow(<App />);
@@ -25,7 +36,9 @@ describe("<App />", () => {
   });
 
   it('should behave one CourseList component', () => {
-    const wrapper = shallow(<App isLoggedIn />);
+    const wrapper = shallow(<App />);
+    wrapper.setProps({ isLoggedIn: true });
+
     expect(wrapper.find('CourseList').length).toEqual(1);
     expect(wrapper.find('Login').length).toEqual(0);
   });
