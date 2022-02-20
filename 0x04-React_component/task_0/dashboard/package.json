@@ -33,11 +33,14 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
+    "jsdom": "^19.0.0",
     "prop-types": "^15.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "jest": {
+    "verbose": true,
+    "testEnvironment": "jsdom",
     "transform": {
       "^.+\\.js$": "babel-jest",
       ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub"

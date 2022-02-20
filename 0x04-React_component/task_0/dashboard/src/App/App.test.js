@@ -1,7 +1,13 @@
 // @ts-nocheck
-import { shallow } from "enzyme";
+import { shallow, mount, configure } from "enzyme";
+import Adapter from 'enzyme-adapter-react-16';
 import React from "react";
 import App from "./App";
+import CourseList from "../CourseList/CourseList";
+import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
+import Login from "../Login/Login";
+import Notifications from "../Notifications/Notification";
 
 
 const lista = [{
@@ -14,29 +20,31 @@ const lista = [{
   credit: 20,
 }];
 
+
 describe("<App />", () => {
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = shallow(<App />);
+  });
+
   it("App renders without crashing", () => {
-    const wrapper = shallow(<App />);
     expect(wrapper.exists()).toEqual(true);
   });
   it('should behave one Notifications component', () => {
-    const wrapper = shallow(<App />);
     expect(wrapper.find('Notifications').length).toEqual(1);
   });
 
   it('should behave one Header component', () => {
-    const wrapper = shallow(<App />);
     expect(wrapper.find('Header').length).toEqual(1);
   });
 
   it('should behave one Login component', () => {
-    const wrapper = shallow(<App />);
     expect(wrapper.find('Login').length).toEqual(1);
     expect(wrapper.find('CourseList').length).toEqual(0);
   });
 
   it('should behave one CourseList component', () => {
-    const wrapper = shallow(<App />);
     wrapper.setProps({ isLoggedIn: true });
 
     expect(wrapper.find('CourseList').length).toEqual(1);
@@ -44,8 +52,25 @@ describe("<App />", () => {
   });
 
   it('should behave one Footer component', () => {
-    const wrapper = shallow(<App />);
     expect(wrapper.find('Footer').length).toEqual(1);
   });
 
+  it('ddd', () => {
+    const alertMock = jest.fn();
+    window.alert = alertMock;
+    const map = {};
+    document.addEventListener = jest.fn((event, cb) => {
+      map[event] = cb;
+    })
+
+    let wrapper2 = shallow(<App />);
+    map.keydown({ keyCode: 72, ctrlKey: true, preventDefault: () => { } });
+    wrapper.setProps({ isLoggedIn: true });
+    wrapper.simulate('keyDown', { keyCode: 72, ctrlKey: true });
+
+    expect(alertMock).toHaveBeenCalledWith('Logging you out');
+    window.alert.mockClear();
+    wrapper2.unmount();
+
+  });
 });

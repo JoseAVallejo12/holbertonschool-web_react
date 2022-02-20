@@ -42,9 +42,24 @@ class App extends Component {
     html: { __html: getLatestNotification() },
   },
   ];
-
   constructor(props) {
     super(props);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+  }
+
+  handleKeyPress(e) {
+    e.preventDefault();
+    if (e.keyCode === 72 && e.ctrlKey) {
+      alert('Logging you out');
+      this.props.logOut();
+    }
+  }
+  componentDidMount() {
+    document.addEventListener('keydown', this.handleKeyPress);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.handleKeyPress);
   }
 
   render() {
@@ -61,9 +76,11 @@ class App extends Component {
 
 App.protoType = {
   isLoggedIn: PropTypes.bool,
+  logOut: PropTypes.func,
 }
 App.defaultProps = {
   isLoggedIn: false,
+  logOut: () => { },
 }
 
 export default App;
