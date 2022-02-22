@@ -15,4 +15,4 @@ describe('UTILS', () => {
   it('getLatestNotification -> should behave Urgent requirement - complete by EOD', () => {
     expect(getLatestNotification()).toBe('<strong>Urgent requirement</strong> - complete by EOD');
   });
-})
+});
