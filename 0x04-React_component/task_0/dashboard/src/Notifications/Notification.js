@@ -40,7 +40,7 @@ export default function Notifications({ listNotifications, displayDrawer }) {
     </div>
 
   );
-};
+}
 
 Notifications.prototype = {
   displayDrawer: PropTypes.bool,
