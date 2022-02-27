@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 // @ts-nocheck
 import { shallow } from "enzyme";
 import Adapter from 'enzyme-adapter-react-16';
@@ -31,6 +32,7 @@ describe("<App />", () => {
   it("App renders without crashing", () => {
     expect(wrapper.exists()).toEqual(true);
   });
+
   it('should behave one Notifications component', () => {
     expect(wrapper.find('Notifications').length).toEqual(1);
   });
@@ -55,7 +57,7 @@ describe("<App />", () => {
     expect(wrapper.find('Footer').length).toEqual(1);
   });
 
-  it('ddd', () => {
+  it('When press key ctrl+h should be alert with "Logging you aut"', () => {
     const alertMock = jest.fn();
     window.alert = alertMock;
     const map = {};

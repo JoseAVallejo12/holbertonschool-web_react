@@ -1,6 +1,8 @@
+/* eslint-disable no-undef */
 import { shallow } from "enzyme";
 import React from "react";
 import Notifications from "./Notification";
+import NotificationItem from "./NotificationItem";
 
 describe("<Notifications />", () => {
   let wrapper;
@@ -50,5 +52,14 @@ describe("<Notifications />", () => {
 
     expect(wrapper.find("ul").at(0).children().length).toEqual(1);
   });
+
+  it('markAsRead(1) => shoul print in console "Notification 1 has been marked as read"', () => {
+    const notification = new Notifications();
+    console.log = jest.fn();
+    const markAsReadMock = jest.spyOn(notification, 'markAsRead');
+    notification.markAsRead(1);
+    expect(markAsReadMock).toHaveBeenCalledWith(1);
+    expect(console.log).toHaveBeenCalledWith(`Notification 1 has been marked as read`);
+  })
 
 });

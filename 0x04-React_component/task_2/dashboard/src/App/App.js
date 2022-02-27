@@ -10,7 +10,10 @@ import { getLatestNotification } from '../utils/utils';
 import './App.css';
 
 class App extends Component {
-  static propTypes = {}
+  static propTypes = {
+    isLoggedIn: PropTypes.bool,
+    logOut: PropTypes.func,
+  }
   listCourses = [{
     id: 1,
     name: 'ES6',
@@ -73,10 +76,6 @@ class App extends Component {
   }
 }
 
-App.protoType = {
-  isLoggedIn: PropTypes.bool,
-  logOut: PropTypes.func,
-}
 App.defaultProps = {
   isLoggedIn: false,
   logOut: () => { },
