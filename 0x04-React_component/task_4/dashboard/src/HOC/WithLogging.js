@@ -1,26 +1,27 @@
-/* eslint-disable react/display-name */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+class WithLogging extends Component {
+  static propTypes = {
+    children: PropTypes.node,
+  };
+  constructor(props) {
+    super(props);
+  }
 
-export default function WithLogging(WrappedComponent) {
-  return class extends Component {
-    static propTypes = {
-      displayName: PropTypes.string,
-    }
-    constructor(props) {
-      super(props);
-      this.displayName = WrappedComponent.displayName || WrappedComponent.name || 'Component';
-    }
-    componentDidMount() {
-      console.log(`Component ${this.displayName} is mounting`);
-    }
+  componentDidMount() {
+    // console.log(this.props);
+    let compName = this.props.children.type.name || 'Component';
+    console.log(`Component ${compName} is mounted`);
+  }
 
-    componentWillUnmount() {
-      console.log(`Component ${this.displayName} is going to unmount`);
-    }
+  componentWillUnmount() {
+    let compName = this.props.children.type.name || 'Component';
+    console.log(`Component ${compName} is going to unmount`);
+  }
 
-    render() {
-      return <WrappedComponent {...this.props} />;
-    }
+  render() {
+    return (this.props.children);
   }
 }
+
+export default WithLogging;
