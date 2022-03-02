@@ -28,6 +28,7 @@ class Notifications extends React.Component {
   markAsRead(id) {
     console.log(`Notification ${id} has been marked as read`);
   }
+
   render() {
     console.log("🚀 ~ render ~ this.props");
     return (
