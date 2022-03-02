@@ -32,4 +32,3 @@ export default class NotificationItem extends PureComponent {
 NotificationItem.defaultProps = {
   type: 'default',
 };
-}
