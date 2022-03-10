@@ -1,7 +1,5 @@
-import { Map } from 'immutable';
+import immutable from 'immutable';
 
-const getImmutableObject = (object) => {
-  return Map(object)
-}
+const getImmutableObject = (object) => immutable.Map(object);
 
 export default getImmutableObject;
